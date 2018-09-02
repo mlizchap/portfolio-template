@@ -1,6 +1,6 @@
 @import '../../global';
 
-.navbar {
+.navbar-component {
     list-style-type: none;
     background-image: linear-gradient(260deg, #e2f9b8 0%, #25f78b 100%);
     display: flex;
@@ -19,13 +19,8 @@
     }
 }
 
-.back-link {
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
 @media screen and (max-width: 600px) {
-    .navbar {
+    .navbar-component {
         flex-direction: column;
         align-items: center;
         padding-top: 10px;

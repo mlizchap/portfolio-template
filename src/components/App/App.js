@@ -6,6 +6,7 @@ import Contact from '../Contact/Contact';
 import Home from '../Home/Home';
 import Navbar from '../Navbar/Navbar';
 import Portfolio from '../Portfolio/Portfolio';
+import ErrorPage from '../ErrorPage/ErrorPage';
 import '../../global.scss';
 import './App.scss';
 
@@ -25,7 +26,8 @@ class App extends Component {
                         <Portfolio projects={projects} />
                     )} />
                     <Route path="/contact" component={Contact} />
-                    <Route path="/:name?/" component={Home} />
+                    <Route exact path="/" component={Home} />
+                    <Route path="/" render={() => <ErrorPage />} />
                 </Switch>
             </div>
         );
