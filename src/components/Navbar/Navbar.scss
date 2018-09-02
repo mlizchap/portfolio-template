@@ -1,0 +1,40 @@
+@import '../../global';
+
+.navbar {
+    list-style-type: none;
+    background-image: linear-gradient(260deg, #e2f9b8 0%, #25f78b 100%);
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    li {
+        padding: 25px 15px;    
+    }
+    a {
+        color: $main-color;
+        text-decoration: none;
+    }
+    &__home-link {
+        flex: 1;
+    }
+}
+
+.back-link {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        li {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+}
