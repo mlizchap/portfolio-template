@@ -4,24 +4,23 @@ import { NavLink, Link } from 'react-router-dom';
 import './Navbar.scss';
 
 class Navbar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  };
-    }
+
     render() {
+        const defaultStyle = { color: '#1f4385'}
+        const active = { color: '#ff96b2'}
         return (
             <ul className="navbar-component">
-                <NavLink to="/" className="navbar-component__home-link">
-                    <li>Home</li>
+                <NavLink to="/" exact style={defaultStyle} activeStyle={active} className="navbar-component__home-link">
+                    <li className="navbar-component__home-list-item">Home</li>
                 </NavLink>
-                <NavLink to="/about" className="navbar-component__about-link">
+                <NavLink to="/about" style={defaultStyle} activeStyle={active}>
                     <li className="navbar-component__about-list-item">About</li>
                 </NavLink>
-                <NavLink to="/portfolio">
-                    <li>Portfolio</li>
+                <NavLink to="/portfolio" style={defaultStyle} activeStyle={active}>
+                    <li className="navbar-component__portfolio-list-item">Portfolio</li>
                 </NavLink>
-                <NavLink to="/contact">
-                    <li>Contact</li>
+                <NavLink to="/contact" style={defaultStyle} activeStyle={active}>
+                    <li className="navbar-component__contact-list-item">Contact</li>
                 </NavLink>
             </ul>
         );
