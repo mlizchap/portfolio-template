@@ -25,12 +25,14 @@ const urlRouteTest = (path, component) => {
 }
 const navbarTest = (link, component) => {
     const wrapper = mount(
-        <MemoryRouter>
+        <MemoryRouter initialEntries={[ '/portfolio-template/' ]}>
             <App/>
         </MemoryRouter>
     );
     const componentLink = wrapper.find(link);
+    console.log("LINK", componentLink.debug())
     componentLink.simulate('click', { button: 0 });
+   
     const componentClicked = wrapper.find(component);
     expect(componentClicked.length).toBe(1);
 }
@@ -38,19 +40,19 @@ const navbarTest = (link, component) => {
 // URL TESTS - go to url and page renders 
 describe('when user goes to url route', () => {
     it('goes to the about page with "/about"', () => {
-        urlRouteTest('/about', '.about-component');
+        urlRouteTest('/portfolio-template/about', '.about-component');
     });
     it('goes to the portfolio page with "/portfolio"', () => {
-        urlRouteTest('/portfolio', '.portfolio-component');
+        urlRouteTest('/portfolio-template/portfolio', '.portfolio-component');
     });
     it('goes to the contact page with "/contact"', () => {
-        urlRouteTest('/contact', '.contact-component');
+        urlRouteTest('/portfolio-template/contact', '.contact-component');
     });
     it('goes to the home page with "/"', () => {
-        urlRouteTest('/', '.home-component');
+        urlRouteTest('/portfolio-template/', '.home-component');
     });
     it('goes to error page a non-recognizable url', () => {
-        urlRouteTest('/random', '.component-errorPage');
+        urlRouteTest('/portfolio-template/random', '.component-errorPage');
     });
 })
 
@@ -74,7 +76,7 @@ describe('when user clicks on a navbar link', () => {
 it('renders a list of portfolios', () => {
     const projects = ['one', 'two', 'three'];
     const wrapper = mount(
-        <MemoryRouter initialEntries={[ './portfolio' ]}>
+        <MemoryRouter initialEntries={[ './portfolio-template/portfolio' ]}>
             <Portfolio projects={projects}/>
         </MemoryRouter>
     );

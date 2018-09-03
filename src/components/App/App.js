@@ -19,15 +19,15 @@ class App extends Component {
     render() {
         return (
             <div className="app-component">
-                <Route path="/" component={Navbar} />   
+                <Route path="/portfolio-template" component={Navbar} />   
                 <Switch>
-                    <Route path="/about" component={About} />
-                    <Route path="/portfolio" render={() => (
+                    <Route path="/portfolio-template/about" component={About} />
+                    <Route path="/portfolio-template/portfolio" render={() => (
                         <Portfolio projects={projects} />
                     )} />
-                    <Route path="/contact" component={Contact} />
-                    <Route exact path="/" component={Home} />
-                    <Route path="/" render={() => <ErrorPage />} />
+                    <Route path="/portfolio-template/contact" component={Contact} />
+                    <Route exact path="/portfolio-template" component={Home} />
+                    <Route path="/portfolio-template" render={() => <ErrorPage />} />
                 </Switch>
             </div>
         );

@@ -10,16 +10,16 @@ class Navbar extends Component {
         const active = { color: '#ff96b2'}
         return (
             <ul className="navbar-component">
-                <NavLink to="/" exact style={defaultStyle} activeStyle={active} className="navbar-component__home-link">
+                <NavLink to="/portfolio-template/" exact style={defaultStyle} activeStyle={active} className="navbar-component__home-link">
                     <li className="navbar-component__home-list-item">Home</li>
                 </NavLink>
-                <NavLink to="/about" style={defaultStyle} activeStyle={active}>
+                <NavLink to="/portfolio-template/about" style={defaultStyle} activeStyle={active}>
                     <li className="navbar-component__about-list-item">About</li>
                 </NavLink>
-                <NavLink to="/portfolio" style={defaultStyle} activeStyle={active}>
+                <NavLink to="/portfolio-template/portfolio" style={defaultStyle} activeStyle={active}>
                     <li className="navbar-component__portfolio-list-item">Portfolio</li>
                 </NavLink>
-                <NavLink to="/contact" style={defaultStyle} activeStyle={active}>
+                <NavLink to="/portfolio-template/contact" style={defaultStyle} activeStyle={active}>
                     <li className="navbar-component__contact-list-item">Contact</li>
                 </NavLink>
             </ul>
