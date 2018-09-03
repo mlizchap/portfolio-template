@@ -1,3 +1,5 @@
+- live site: https://mlizchap.github.io/portfolio-template/
+
 ## Overview
 - a template for a site that renders a home page, about page, contact and portfolio page. 
 
